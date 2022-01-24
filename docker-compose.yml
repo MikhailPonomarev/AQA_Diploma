@@ -1,13 +1,11 @@
-version: '3'
+version: '3.11'
+
 services:
-  mysqldb:
-    image: mysql:8.0
+  db:
+    image: postgres:12-alpine
     ports:
-      - '3306:3306'
+      - '5432:5432'
     environment:
-      - MYSQL_RANDOM_ROOT_PASSWORD=yes
-      - MYSQL_DATABASE=app
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=pass
-    volumes:
-      - ./src/test/resources:/docker-entrypoint-initdb.d
+      - POSTGRES_DB=app
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
