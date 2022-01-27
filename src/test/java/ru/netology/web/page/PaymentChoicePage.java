@@ -17,7 +17,7 @@ public class PaymentChoicePage {
         tourHeading.shouldBe(visible);
     }
 
-    public BuyTourPage buyTour() {
+    public BuyTourPage buyTourOnCash() {
         buyButton.click();
         return new BuyTourPage();
     }

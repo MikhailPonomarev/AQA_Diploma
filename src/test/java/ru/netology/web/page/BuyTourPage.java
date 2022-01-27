@@ -3,16 +3,19 @@ package ru.netology.web.page;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BuyTourPage {
     final SelenideElement formHeading = $(Selectors.withText("Оплата по карте"));
-    final SelenideElement cardNumberField = $(Selectors.withText("Номер карты"));
-    final SelenideElement monthField = $(Selectors.withText("Месяц"));
-    final SelenideElement yearField = $(Selectors.withText("Год"));
-    final SelenideElement holderField = $(Selectors.withText("Владелец"));
-    final SelenideElement cvvField = $(Selectors.withText("CVC/CVV"));
+    final SelenideElement buyOnCreditButton = $(Selectors.withText("Купить в кредит"));
+    final SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
+    final SelenideElement monthField = $("[placeholder='08']");
+    final SelenideElement yearField = $("[placeholder='22']");
+    final SelenideElement holderField = $("div:nth-child(3) > span input:not([placeholder='999'])");
+    final SelenideElement cvvField = $("[placeholder='999']");
     final SelenideElement continueButton = $(Selectors.withText("Продолжить"));
     final SelenideElement successNotification = $(Selectors.withText("Успешно"));
     final SelenideElement errorNotification = $(Selectors.withText("Ошибка"));
@@ -28,7 +31,7 @@ public class BuyTourPage {
         holderField.setValue(holderName);
         cvvField.setValue(cvvCode);
         continueButton.click();
-        successNotification.should(appear);
+        successNotification.should(appear, Duration.ofSeconds(10));
     }
 
     public void falseBuyTour(String cardNumber, String month, String year, String holderName, String cvvCode) {
@@ -38,7 +41,12 @@ public class BuyTourPage {
         holderField.setValue(holderName);
         cvvField.setValue(cvvCode);
         continueButton.click();
-        errorNotification.should(appear);
+        errorNotification.should(appear, Duration.ofSeconds(10));
+    }
+
+    public BuyTourOnCreditPage changeToCreditForm() {
+        buyOnCreditButton.click();
+        return new BuyTourOnCreditPage();
     }
 }
 
