@@ -1,7 +1,9 @@
 package ru.netology.web.data;
 
 import com.github.javafaker.Faker;
+import lombok.SneakyThrows;
 
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -32,9 +34,13 @@ public class DataHelper {
         }
     }
 
-    public static String holderName(String setLocale) {
-        Faker faker = new Faker(new Locale(setLocale));
-        return faker.name().firstName() + " " + faker.name().lastName();
+    public static String holderName(boolean isNumeric, String setLocale) {
+        if (!isNumeric) {
+            Faker faker = new Faker(new Locale(setLocale));
+            return faker.name().firstName() + " " + faker.name().lastName();
+        } else {
+            return "4213&$^@#";
+        }
     }
 
     public static String cvvCode(boolean isValid) {
@@ -44,5 +50,45 @@ public class DataHelper {
         } else {
             return faker.number().digits(2);
         }
+    }
+
+    @SneakyThrows
+    public static String paymentStatus() {
+        String query = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1;";
+        String status = null;
+
+        try (
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:postgresql://localhost:5432/postgres", "admin", "password"
+                );
+                PreparedStatement preparedStatement = connection.prepareStatement(query)
+        ) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    status = resultSet.getString(1);
+                }
+            }
+        }
+        return status;
+    }
+
+    @SneakyThrows
+    public static int paymentAmount() {
+        String query = "SELECT amount FROM payment_entity ORDER BY created DESC LIMIT 1;";
+        int amount = 0;
+
+        try (
+                Connection connection = DriverManager.getConnection(
+                        "jdbc:postgresql://localhost:5432/postgres", "admin", "password"
+                );
+                PreparedStatement preparedStatement = connection.prepareStatement(query)
+        ) {
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    amount = resultSet.getInt(1);
+                }
+            }
+        }
+        return amount/100;
     }
 }
