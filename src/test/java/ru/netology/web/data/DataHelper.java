@@ -18,6 +18,10 @@ public class DataHelper {
         }
     }
 
+    public static String falseCardNumber() {
+        return "1111 2222";
+    }
+
     public static String cardMonth (boolean isExpired, long months) {
         if (!isExpired) {
             return LocalDate.now().plusMonths(months).format(DateTimeFormatter.ofPattern("MM"));

@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BuyTourPage {
-    final SelenideElement formHeading = $(Selectors.withText("Оплата по карте"));
     final SelenideElement buyOnCreditButton = $(Selectors.withText("Купить в кредит"));
+    final SelenideElement formHeading = $(Selectors.withText("Оплата по карте"));
     final SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
     final SelenideElement monthField = $("[placeholder='08']");
     final SelenideElement yearField = $("[placeholder='22']");
@@ -24,29 +24,56 @@ public class BuyTourPage {
         formHeading.shouldBe(visible);
     }
 
-    public void buyTour(String cardNumber, String month, String year, String holderName, String cvvCode) {
+    public void buyTour(boolean isSuccesseful, String cardNumber, String month, String year, String holderName, String cvvCode) {
         cardNumberField.setValue(cardNumber);
         monthField.setValue(month);
         yearField.setValue(year);
         holderField.setValue(holderName);
         cvvField.setValue(cvvCode);
         continueButton.click();
-        successNotification.should(appear, Duration.ofSeconds(10));
+        if (isSuccesseful) {
+            successNotification.should(appear, Duration.ofSeconds(10));
+        } else {
+            errorNotification.should(appear, Duration.ofSeconds(10));
+        }
     }
 
-    public void falseBuyTour(String cardNumber, String month, String year, String holderName, String cvvCode) {
-        cardNumberField.setValue(cardNumber);
-        monthField.setValue(month);
-        yearField.setValue(year);
-        holderField.setValue(holderName);
-        cvvField.setValue(cvvCode);
-        continueButton.click();
-        errorNotification.should(appear, Duration.ofSeconds(10));
+    public void falseBuyTour(boolean isEmpty, String cardNumber, String month, String year, String holderName, String cvvCode) {
+        if (isEmpty) {
+            continueButton.click();
+        } else {
+            cardNumberField.setValue(cardNumber);
+            monthField.setValue(month);
+            yearField.setValue(year);
+            holderField.setValue(holderName);
+            cvvField.setValue(cvvCode);
+            continueButton.click();
+        }
     }
 
     public BuyTourOnCreditPage changeToCreditForm() {
         buyOnCreditButton.click();
         return new BuyTourOnCreditPage();
+    }
+
+    public static String getCardFieldSub() {
+        return $("fieldset > div:nth-child(1) * .input__sub").getText();
+    }
+
+    public static String getMonthFieldSub() {
+        return $("fieldset > div:nth-child(2) * span:nth-child(1) * span > span.input__sub").getText();
+    }
+
+    public static String getYearFieldSub() {
+        return $("fieldset > div:nth-child(2) * span:nth-child(2) * span > span.input__sub").getText();
+    }
+
+    public static String getHolderFieldSub() {
+        return $("fieldset > div:nth-child(3) * span:nth-child(1) * span > span.input__sub").getText();
+    }
+
+    public static String getCvvFieldSub() {
+        return $("fieldset > div:nth-child(3) * span:nth-child(2) * span > span.input__sub").getText();
     }
 }
 

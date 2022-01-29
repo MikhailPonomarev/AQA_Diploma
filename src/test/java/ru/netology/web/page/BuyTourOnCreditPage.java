@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class BuyTourOnCreditPage {
+    final SelenideElement buyButton = $(Selectors.withText("Купить"));
     final SelenideElement formHeading = $(Selectors.withText("Кредит по данным карты"));
     final SelenideElement cardNumberField = $("[placeholder='0000 0000 0000 0000']");
     final SelenideElement monthField = $("[placeholder='08']");
@@ -23,5 +24,10 @@ public class BuyTourOnCreditPage {
         holderField.shouldBe(visible);
         cvvField.shouldBe(visible);
         continueButton.shouldBe(visible);
+    }
+
+    public BuyTourPage changeToBuyForm() {
+        buyButton.click();
+        return new BuyTourPage();
     }
 }
