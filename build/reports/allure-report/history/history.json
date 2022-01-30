@@ -1,0 +1,290 @@
+{
+  "6d64f45570ed37b0d80eddd59fd75c14" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d0c40c272f136e92",
+      "status" : "failed",
+      "statusDetails" : "Element not found {fieldset > div:nth-child(3) * span:nth-child(1) * span > span.input__sub}\r\nExpected: exist\r\nScreenshot: file:/C:/Automation%20Projects/5%20Diploma/build/reports/tests/1643540520194.1.png\r\nPage source: file:/C:/Automation%20Projects/5%20Diploma/build/reports/tests/1643540520194.1.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"fieldset > div:nth-child(3) * span:nth-child(1) * span > span.input__sub\"}",
+      "time" : {
+        "start" : 1643540515255,
+        "stop" : 1643540520746,
+        "duration" : 5491
+      }
+    } ]
+  },
+  "c26804f75be1943f9a5930a54b649239" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "85989467b4d255a3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540540410,
+        "stop" : 1643540541364,
+        "duration" : 954
+      }
+    } ]
+  },
+  "873875ef2a40b30c04781958cad388b0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1f4c84151654918f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540520754,
+        "stop" : 1643540522548,
+        "duration" : 1794
+      }
+    } ]
+  },
+  "e70e706d03b43334e89400a566b6be0c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6257ab5c57b38c0b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540502342,
+        "stop" : 1643540503323,
+        "duration" : 981
+      }
+    } ]
+  },
+  "51520ba250d129392f50190a3c3c5ffa" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c4400260296cc3ed",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540522556,
+        "stop" : 1643540523645,
+        "duration" : 1089
+      }
+    } ]
+  },
+  "e6fc3776b7808dfc738387aa683eef9e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "13680964478b4bb5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540524929,
+        "stop" : 1643540525862,
+        "duration" : 933
+      }
+    } ]
+  },
+  "1a612271c5b9eaaf8bd9d1284818bc1c" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1801f4ad35337df8",
+      "status" : "failed",
+      "statusDetails" : "Element should visible {with text: Ошибка}\r\nElement: '<div class=\"notification__title\" displayed:false></div>'\r\nActual value: hidden\r\nScreenshot: file:/C:/Automation%20Projects/5%20Diploma/build/reports/tests/1643540537055.2.png\r\nPage source: file:/C:/Automation%20Projects/5%20Diploma/build/reports/tests/1643540537055.2.html\r\nTimeout: 10 s.",
+      "time" : {
+        "start" : 1643540525871,
+        "stop" : 1643540537579,
+        "duration" : 11708
+      }
+    } ]
+  },
+  "77ab8f0ca40be86ef91d41195811f3b0" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ff054acb550b5db5",
+      "status" : "failed",
+      "statusDetails" : "Element not found {fieldset > div:nth-child(3) * span:nth-child(1) * span > span.input__sub}\r\nExpected: exist\r\nScreenshot: file:/C:/Automation%20Projects/5%20Diploma/build/reports/tests/1643540511893.0.png\r\nPage source: file:/C:/Automation%20Projects/5%20Diploma/build/reports/tests/1643540511893.0.html\r\nTimeout: 4 s.\r\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"fieldset > div:nth-child(3) * span:nth-child(1) * span > span.input__sub\"}",
+      "time" : {
+        "start" : 1643540506959,
+        "stop" : 1643540512316,
+        "duration" : 5357
+      }
+    } ]
+  },
+  "364c325b37407e702da3f7db0007c2b1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d128d21788b03de5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540523653,
+        "stop" : 1643540524918,
+        "duration" : 1265
+      }
+    } ]
+  },
+  "dfe6d1b0cb41deac4ddd20bfc6490c1d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e45d3df047cc74c3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540513013,
+        "stop" : 1643540514351,
+        "duration" : 1338
+      }
+    } ]
+  },
+  "f7a4188d81bb6bf3f08163fa128553a7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4ccfc6b4a9619461",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540514358,
+        "stop" : 1643540515255,
+        "duration" : 897
+      }
+    } ]
+  },
+  "979e86a04b4797c0e04fc088be68bae6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b304caf95a9485a2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540495892,
+        "stop" : 1643540502133,
+        "duration" : 6241
+      }
+    } ]
+  },
+  "4293ebe4dda7333245fdb3d38b4a6527" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "326ad8ca7a41a3d6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540512325,
+        "stop" : 1643540512998,
+        "duration" : 673
+      }
+    } ]
+  },
+  "317243fc730ec6d865c711414b94eea6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "66818f68f2da21d9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540537579,
+        "stop" : 1643540540406,
+        "duration" : 2827
+      }
+    } ]
+  },
+  "1d11d268865ada0198857791a31cf888" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "932a941a5d2ae38e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1643540503407,
+        "stop" : 1643540506954,
+        "duration" : 3547
+      }
+    } ]
+  }
+}
