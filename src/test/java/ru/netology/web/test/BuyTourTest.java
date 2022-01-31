@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BuyTourTest {
 
-        //TODO: не формируется allure отчет
     @BeforeAll
     static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -260,7 +259,7 @@ public class BuyTourTest {
     }
 
     @Test
-    void buyTourWithFalseCvvField() {
+    void buyTourWithFalseCvvCode() {
         var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
