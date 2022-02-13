@@ -10,6 +10,10 @@ import java.util.Locale;
 
 public class DataHelper {
 
+    public static String testUrl() {
+        return "http://localhost:8080/";
+    }
+
     public static String cardNumber(boolean isApproved) {
         if (isApproved) {
             return "1111 2222 3333 4444";

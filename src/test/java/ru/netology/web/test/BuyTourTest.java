@@ -25,7 +25,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithApprovedCard() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.buyTour(
                 true,
@@ -44,7 +44,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithDeclinedCard() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.buyTour(
                 false,
@@ -63,7 +63,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithCurrentMonthAndYear() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.buyTour(
                 true,
@@ -82,7 +82,7 @@ public class BuyTourTest {
 
     @Test
     void changeToCreditForm() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         var buyTourOnCreditPage = buyTourPage.changeToCreditForm();
         buyTourOnCreditPage.changeToBuyForm();
@@ -90,7 +90,7 @@ public class BuyTourTest {
 
     @Test
     void sendEmptyForm() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(true,null,null,null,null,null);
 
@@ -108,7 +108,7 @@ public class BuyTourTest {
 
     @Test
     void sendFormWithEmptyCardNumber() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -124,7 +124,7 @@ public class BuyTourTest {
 
     @Test
     void sendFormWithFalseCardNumber() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -141,7 +141,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithExpiredCard() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -158,7 +158,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithEmptyMonthField() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -175,7 +175,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithEmptyYearField() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -192,7 +192,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithEmptyHolderField() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -209,7 +209,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithCyrillicHolderName() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -226,7 +226,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithNumericHolderField() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -243,7 +243,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithEmptyCvvField() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
@@ -260,7 +260,7 @@ public class BuyTourTest {
 
     @Test
     void buyTourWithFalseCvvCode() {
-        var paymentChoicePage = open("http://localhost:8080/", PaymentChoicePage.class);
+        var paymentChoicePage = open(testUrl(), PaymentChoicePage.class);
         var buyTourPage = paymentChoicePage.buyTourOnCash();
         buyTourPage.falseBuyTour(
                 false,
